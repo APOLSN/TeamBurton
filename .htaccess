@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+DirectoryIndex index.html
+
+RewriteCond %{HTTP_HOST} !^teamburton\.pixelserver\.fr$ [NC]
+RewriteRule ^(.*)$ http://teamburton.pixelserver.fr/$1 [R=301,L]
