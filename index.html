@@ -50,13 +50,14 @@
 <header>
     <h1>Team Burton</h1>
 </header>
-<nav>
-    <a href="/index.html">Home</a>
-    <a href="">About Us</a>
-    <a href="/Writeup">Write Up</a>
-    <a href="">🏆 Exploits</a>
-    <a href="/Membres">Membres</a>
-</nav>
+<div id="nav-placeholder"></div>
+<script>
+    fetch('/pages/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+        });
+</script>
 <section>
     <h2>Welcome to Team Burton's Official Website</h2>
     <p>We are a CTF's group</p>
